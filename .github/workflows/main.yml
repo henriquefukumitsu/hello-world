@@ -25,4 +25,3 @@ jobs:
             - Second Change
           draft: false
           prerelease: false
-          repo: dev
