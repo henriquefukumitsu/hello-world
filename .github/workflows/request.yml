@@ -1,0 +1,21 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      versionName:
+        description: 'Versão: (ex: 1.0.0)'
+        required: true
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create Pull Request
+      uses: actions/create-pull-request@v2
+      with:
+        title: "dev"
+        head: "dev"
+        base: "master"
+        body: "This PR includes new feature X"
+        labels: "enhancement, new-feature"   
